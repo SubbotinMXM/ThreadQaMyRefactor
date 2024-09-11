@@ -33,4 +33,13 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
+    String fullTags = System.getProperty("customTags")
+    if (fullTags != null){
+        String[] tags = fullTags.split(",")
+        useJUnitPlatform(){
+            for(String tag: tags){
+                includeTags.add(tag)
+            }
+        }
+    }
 }
