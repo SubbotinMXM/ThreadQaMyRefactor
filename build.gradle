@@ -33,6 +33,12 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
+}
+
+tasks.register("myTags", Test.class){
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
     String fullTags = System.getProperty("customTags")
     if (fullTags != null){
         String[] tags = fullTags.split(",")
