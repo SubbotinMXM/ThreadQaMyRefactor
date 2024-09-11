@@ -35,6 +35,26 @@ test {
     }
 }
 
+task old_test(type: Test) {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    systemProperties(System.getProperties())
+    useJUnitPlatform() {
+        includeTags("OldTests")
+    }
+}
+
+task tanya_test(type: Test) {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    systemProperties(System.getProperties())
+    useJUnitPlatform() {
+        includeTags("TanyaTests")
+    }
+}
+
 tasks.register("myTags", Test.class){
     testLogging {
         events "passed", "skipped", "failed"
