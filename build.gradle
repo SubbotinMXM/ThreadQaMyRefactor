@@ -23,9 +23,8 @@ dependencies {
     testImplementation 'org.assertj:assertj-core:3.24.2'
     implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
     testImplementation group: 'org.awaitility', name: 'awaitility', version: '4.2.0'
-    testImplementation 'com.github.tomakehurst:wiremock:2.27.2'
-
-
+    testImplementation('com.codeborne:selenide:6.13.1')
+    testImplementation ('io.qameta.allure:allure-selenide:2.21.0')
 }
 
 test {
@@ -33,6 +32,7 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
+    systemProperties(System.getProperties())
 }
 
 task old_test(type: Test) {
