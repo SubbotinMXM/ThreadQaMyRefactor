@@ -8,6 +8,7 @@ import io.restassured.specification.RequestSpecification;
 import org.aeonbits.owner.ConfigFactory;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.http.ContentType.JSON;
 
 public class RequestHelper {
 
@@ -15,6 +16,7 @@ public class RequestHelper {
 
     public static RequestSpecification getDefaultRequestSpec() {
         return given()
+                .contentType(JSON)
                 .filters(new RequestLoggingFilter(), new ResponseLoggingFilter(), new AllureRestAssured())
                 .log().all()
                 .baseUri(CONFIG.baseUrl());
