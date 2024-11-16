@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("Тесты на селениде")
+@Tag("AllWeb")
 public class SelenideLordfilmTest extends TestBase {
 
     private final static String word = "дюна";

@@ -140,7 +140,6 @@ public class UserNewTestsTanya {
                 .should(Conditions.hasError(ResponseErrors.UNAUTHORIZED));
     }
 
-    // Переписать с Таней
     @Test
     public void positiveChangeUserPassTest() {
         val oldPassword = user.getPass();

@@ -17,12 +17,4 @@ public class JwtAuthData{
 
 	@JsonProperty("password")
 	private String password;
-
-	public String getPassword(){
-		return password;
-	}
-
-	public String getUsername(){
-		return username;
-	}
 }

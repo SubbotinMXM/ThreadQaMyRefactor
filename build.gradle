@@ -55,6 +55,16 @@ task tanya_test(type: Test) {
     }
 }
 
+task all_web_test(type: Test) {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    systemProperties(System.getProperties())
+    useJUnitPlatform() {
+        includeTags("AllWeb")
+    }
+}
+
 tasks.register("myTags", Test.class){
     testLogging {
         events "passed", "skipped", "failed"

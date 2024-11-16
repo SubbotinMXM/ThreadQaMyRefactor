@@ -14,9 +14,9 @@ public class TestBase {
     public static void setup() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
-        String jenkins = System.getProperty("jenkins");
-        if ("true".equals(jenkins)) {
-            // Запуск тестов удаленно (./gradlew clean test -Djenkins="true")
+        boolean isJenkins = Boolean.getBoolean("jenkins");
+        if (isJenkins) {
+            // Запуск тестов удаленно (./gradlew clean test -Djenkins=true)
             System.out.println("Running tests remotely");
             Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
             DesiredCapabilities capabilities = new DesiredCapabilities();
