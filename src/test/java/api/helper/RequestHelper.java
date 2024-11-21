@@ -1,6 +1,7 @@
 package api.helper;
 
-import api.utils.AppConfig;
+import config.AppConfig;
+import config.Config;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -12,13 +13,11 @@ import static io.restassured.http.ContentType.JSON;
 
 public class RequestHelper {
 
-    private static final AppConfig CONFIG = ConfigFactory.newInstance().create(AppConfig.class, System.getProperties());
-
     public static RequestSpecification getDefaultRequestSpec() {
         return given()
                 .contentType(JSON)
                 .filters(new RequestLoggingFilter(), new ResponseLoggingFilter(), new AllureRestAssured())
                 .log().all()
-                .baseUri(CONFIG.baseUrl());
+                .baseUri(Config.getInstance().baseUrl());
     }
 }

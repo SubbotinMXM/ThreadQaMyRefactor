@@ -1,4 +1,4 @@
-package api.utils;
+package config;
 
 import org.aeonbits.owner.Config;
 
@@ -7,4 +7,7 @@ public interface AppConfig extends Config {
 
     @Config.Key("baseUrl")
     String baseUrl();
+
+    @Config.Key("remoteUrl")
+    String remoteUrl();
 }

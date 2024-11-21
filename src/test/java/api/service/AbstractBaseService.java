@@ -1,15 +1,7 @@
 package api.service;
 
-import api.utils.AppConfig;
-import io.qameta.allure.restassured.AllureRestAssured;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
-import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import lombok.Getter;
-import org.aeonbits.owner.ConfigFactory;
-
-import static io.restassured.http.ContentType.JSON;
 
 @Getter
 public abstract class AbstractBaseService<T>{
