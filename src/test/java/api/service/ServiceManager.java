@@ -20,4 +20,6 @@ public class ServiceManager {
     public static UserServiceTanya getUserServiceTanya2(final RequestSpecification specification){
         return new UserServiceTanya(specification);
     }
+
+    // Очень важная строчка
 }
